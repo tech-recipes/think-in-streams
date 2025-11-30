@@ -2,22 +2,6 @@ package org.tr.streams.data;
 
 public class Employee {
 
-    public enum Department {
-        IT, HR, FINANCE, SALES, MARKETING, OPERATIONS
-    }
-
-    public enum Role {
-        ENGINEER, MANAGER, ANALYST, LEAD, DIRECTOR, INTERN
-    }
-
-    public enum EmploymentType {
-        FULL_TIME, CONTRACT, INTERN
-    }
-
-    public enum Location {
-        NEW_YORK, LONDON, BERLIN, SYDNEY, TOKYO
-    }
-
     private int id;
     private String name;
     private Department department;
@@ -72,5 +56,21 @@ public class Employee {
                 ", location=" + location +
                 ", active=" + active +
                 '}';
+    }
+
+    public enum Department {
+        IT, HR, FINANCE, SALES, MARKETING, OPERATIONS
+    }
+
+    public enum Role {
+        ENGINEER, MANAGER, ANALYST, LEAD, DIRECTOR, INTERN
+    }
+
+    public enum EmploymentType {
+        FULL_TIME, CONTRACT, INTERN
+    }
+
+    public enum Location {
+        NEW_YORK, LONDON, BERLIN, SYDNEY, TOKYO
     }
 }
