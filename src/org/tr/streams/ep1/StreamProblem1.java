@@ -14,6 +14,7 @@ public class StreamProblem1 {
      */
     public static void main(String[] args) {
 
+        //for loop
         List<Employee> employees = EmployeeData.getEmployees();
         List<Employee> result = new ArrayList<>();
 
@@ -25,10 +26,11 @@ public class StreamProblem1 {
 
         System.out.println(result);
 
-        // Stream Solution
+        // Streams Solution
+
         result = employees.stream()
                 .filter(e -> Employee.Department.IT.equals(e.getDepartment()) && e.getSalary() > 90000)
-                .collect(Collectors.toList());
+                .toList();
 
         System.out.println(result);
 

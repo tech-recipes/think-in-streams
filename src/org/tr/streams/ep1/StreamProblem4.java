@@ -2,10 +2,8 @@ package org.tr.streams.ep1;
 import org.tr.streams.data.Employee;
 import org.tr.streams.data.EmployeeData;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
 public class StreamProblem4 {
 
     //Find the top 3 highest-paid IT employees and return them as a list.
@@ -32,9 +30,16 @@ public class StreamProblem4 {
             top3.add(e);
             count++;
         }
-
+        System.out.println(top3);
         // Stream filter -> sort -> limit -> toList() Java 16+ collect(Collectors.toList())
 
+        top3 = employees.stream()
+                        .filter(e -> Employee.Department.IT.equals(e.getDepartment()))
+                        .sorted(Comparator.comparing(Employee::getSalary).reversed())
+                        .limit(3)
+                        .toList();
+
+        System.out.println(top3);
 
     }
 }

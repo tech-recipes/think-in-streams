@@ -27,10 +27,11 @@ public class StreamProblem2 {
 
         System.out.println(names);
 
-        List<String> nameList = employees.stream()
-                .filter(e -> e.getDepartment() == Employee.Department.IT && e.getSalary() > 90_000)
-                .map(Employee::getName)
-                .toList();
+        nameList = employees.stream()
+                        .filter(e -> Employee.Department.IT.equals(e.getDepartment()) && e.getSalary() > 90_000)
+                        .map(Employee::getName)
+                        .toList(); // collect(Collectors.toList())
+
 
         System.out.println(nameList);
 

@@ -19,12 +19,15 @@ public class StreamProblem7 {
 
         List<String> locations = new ArrayList<>(locationSet);
 
-        for (String loc : locations) {
-            System.out.println(loc);
-        }
+        System.out.println(locations);
 
-        // stream : map(e -> e.getLocation().name()) → distinct() → toList().
+        // Distinct location names as strings like "LONDON", "NEW_YORK" etc..
+        locations = employees.stream()
+                            .map(Employee::getLocation)
+                            .map(Enum::name)
+                            .distinct()
+                            .toList();
 
-
+        System.out.println(locations);
     }
 }

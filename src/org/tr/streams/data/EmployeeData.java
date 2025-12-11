@@ -86,6 +86,14 @@ public class EmployeeData {
                         68000, 28,
                         Employee.EmploymentType.FULL_TIME,
                         Employee.Location.TOKYO,
+                        true),
+
+                new Employee(11, "Avar Jackson",
+                        Employee.Department.IT,
+                        Employee.Role.ENGINEER,
+                        98000, 35,
+                        Employee.EmploymentType.FULL_TIME,
+                        Employee.Location.NEW_YORK,
                         true)
         );
     }

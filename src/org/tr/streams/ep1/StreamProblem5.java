@@ -43,7 +43,13 @@ public class StreamProblem5 {
             System.out.println(e);
         }
         // Your Streams version: filter(isActive) → skip(3) → limit(3) → toList().
+        activeEmployees = employees.stream()
+                .filter(Employee::isActive)
+                .skip(3)
+                .limit(3)
+                .toList();
 
+        System.out.println(activeEmployees);
 
     }
 }
